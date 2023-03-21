@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/accounts', 'App\Http\Controllers\AccountController@store');
 Route::get('/accounts/{user}', 'App\Http\Controllers\AccountController@index');
+Route::post('/accounts/{user}/transactions', 'App\Http\Controllers\TransactionController@store');

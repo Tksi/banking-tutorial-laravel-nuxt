@@ -22,6 +22,8 @@ class AccountController extends Controller
     public function store(Request $request)
     {
         // create Account
-        return Account::create($request->all());
+        $account = Account::create($request->all());
+        $account['transactions'] = [];
+        return $account;
     }
 }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('user');
-            $table->timestamp('date');
+            $table->string('date');
             $table->string('object');
             $table->integer('amount');
         });
