@@ -18,6 +18,9 @@ class TransactionController extends Controller
         $account = Account::where('user', $user)->get();
         $account[0]['balance'] += $transaction['amount'];
         $account[0]->save();
-        return $transaction;
+
+        // return updated Account with Transactions
+        $account[0]['transactions'] = Transaction::where('user', $user)->get();
+        return $account[0];
     }
 }
